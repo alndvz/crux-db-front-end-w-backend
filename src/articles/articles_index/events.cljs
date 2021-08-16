@@ -5,8 +5,7 @@
 
 (re-frame/reg-event-fx
  ::load-articles
- (fn [{:keys [db]} _]
-   (println "hello")
+ (fn [_ _]
    {:http-xhrio {:method          :get
                  :uri             "/articles/"
                  :timeout         8000
