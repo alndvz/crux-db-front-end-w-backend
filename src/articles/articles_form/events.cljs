@@ -1,5 +1,7 @@
 (ns articles.articles-form.events
-  (:require [re-frame.core :as re-frame]))
+  (:require [re-frame.core :as re-frame]
+            [ajax.core :as ajax]
+            [day8.re-frame.http-fx]))
 
 
 (re-frame/reg-event-db
@@ -41,25 +43,21 @@
    (let [current-tags (get-in db [:form :tags] #{})]
      (assoc-in db [:form :tags] (disj current-tags tag)))))
 
-(defn save-new-article [db]
-  (let [last-article-id (get (apply max-key :id (:articles db)) :id 0)
-        article (-> (:form db)
-                    (assoc :date-created (get-date))
-                    (assoc :id (inc last-article-id)))
-        current-articles (get db :articles [])]
-    (-> db
-        (assoc :articles (conj current-articles article))
-        (dissoc :form))))
-
-(defn update-article [db id]
-  (let [article (:form db)
-        article-ids (map #(:id %) (:articles db))
-        article-index (.indexOf article-ids id)
-        updated-articles (assoc (:articles db) article-index article)]
-    (assoc db :articles updated-articles)))
+(re-frame/reg-event-fx
+ ::save-article
+ (fn [{:keys [db]} [_ editing-id]]
+   (let [form-data (:form db)
+         article (if editing-id (assoc  form-data :date-created (get-date)) form-data)]
+     {:http-xhrio {:method          :POST
+                   :uri             "/articles/create"
+                   :timeout         8000
+                   :params          article
+                   :format          (ajax/json-request-format)
+                   :response-format (ajax/json-response-format {:keywords? true})  ;; IMPORTANT!: You must provide this.
+                   :on-success      [::saved-article]
+                   :on-failure      [::api-fail]}})))
 
 (re-frame/reg-event-db
- ::save-article
- (fn [db [_ editing-id]]
-   (let [updated-db (if editing-id (update-article db editing-id) (save-new-article db))]
-     updated-db)))
+ ::saves-article
+ (fn [db [_ result]]
+   (assoc db :success-http-result result)))
