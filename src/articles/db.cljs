@@ -1,8 +1,7 @@
 (ns articles.db)
 
 (def default-db
-  {:name "re-frame"
-   :articles [{:id 1
+  {:articles [{:id 1
                :title "My first article"
                :excerpt "time to be living man"
                :image-url "https://www.hdnicewallpapers.com/Walls/Normal/Cat/Beautiful_Angry_Kitten.jpg"

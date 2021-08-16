@@ -25,9 +25,3 @@ clj꞉shadow.user꞉>  ; Use `alt+enter` to evaluate
 ;    (There is a button in the status bar for this)
 ; Jack-in done.
 cljs꞉cljs.user꞉>  ; Use `alt+enter` to evaluate
-:repl/exception!
-; 
-; Execution error (TypeError) at (<cljs repl>:1).
-Cannot read property 'views' of undefined
-cljs꞉articles.articles-view.views꞉> 
-; nREPL Connection was closed

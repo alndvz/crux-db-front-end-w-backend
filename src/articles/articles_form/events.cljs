@@ -25,6 +25,7 @@
         year (-> date (.getFullYear))]
     (str day " " month " " year)))
 
+
 (re-frame/reg-event-db
  ::save-article-tag
  (fn [db _]
@@ -39,8 +40,6 @@
  (fn [db [_ tag]]
    (let [current-tags (get-in db [:form :tags] #{})]
      (assoc-in db [:form :tags] (disj current-tags tag)))))
-
-
 
 (defn save-new-article [db]
   (let [last-article-id (get (apply max-key :id (:articles db)) :id 0)
@@ -58,8 +57,6 @@
         article-index (.indexOf article-ids id)
         updated-articles (assoc (:articles db) article-index article)]
     (assoc db :articles updated-articles)))
-
-
 
 (re-frame/reg-event-db
  ::save-article

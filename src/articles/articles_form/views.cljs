@@ -29,8 +29,6 @@
      {:on-click #(re-frame/dispatch [::events/save-article-tag])}
      "➕"]]])
 
-
-
 (defn article-form []
   (let [edit-id @(re-frame/subscribe [::subs/edit-id])
         form-valid? @(re-frame/subscribe [::form-subs/form-is-valid? [:title :excerpt :image-url :body :author :tags]])]
