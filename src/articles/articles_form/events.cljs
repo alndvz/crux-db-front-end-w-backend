@@ -16,7 +16,9 @@
 (re-frame/reg-event-db
  ::initialise-create
  (fn [db _]
-   (dissoc db :form)))
+   (-> db
+       (dissoc  :form)
+       (dissoc :editing-id))))
 
 
 (defn get-date []
@@ -47,15 +49,16 @@
  ::save-article
  (fn [{:keys [db]} [_ editing-id]]
    (let [form-data (:form db)
-         article (if editing-id (assoc  form-data :date-created (get-date)) form-data)]
+         article (if editing-id (assoc  form-data :date-created (get-date)) form-data)
+         uri (if editing-id "/articles/update" "/articles/create")]
      {:http-xhrio {:method          :POST
-                   :uri             "/articles/create"
+                   :uri             uri
                    :timeout         8000
                    :params          article
                    :format          (ajax/json-request-format)
                    :response-format (ajax/json-response-format {:keywords? true})  ;; IMPORTANT!: You must provide this.
                    :on-success      [::saved-article]
-                   :on-failure      [::api-fail]}})))
+                   :on-failure      [:api-fail]}})))
 
 (re-frame/reg-event-db
  ::saves-article

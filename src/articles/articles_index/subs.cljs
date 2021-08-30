@@ -18,4 +18,4 @@
                  :timeout         8000                                           ;; optional see API docs
                  :response-format (ajax/json-response-format {:keywords? true})  ;; IMPORTANT!: You must provide this.
                  :on-success      [::store-articles]
-                 :on-failure      [:bad-http-result]}}))
+                 :on-failure      [:bad=]}}))

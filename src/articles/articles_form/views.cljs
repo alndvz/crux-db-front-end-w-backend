@@ -31,9 +31,10 @@
 
 (defn article-form []
   (let [edit-id @(re-frame/subscribe [::subs/edit-id])
-        form-valid? @(re-frame/subscribe [::form-subs/form-is-valid? [:title :excerpt :image-url :body :author :tags]])]
+        form-valid? @(re-frame/subscribe [::form-subs/form-is-valid? [:title :excerpt :image-url :body :author :tags]])
+        title (if edit-id "Update Article" "Create Article")]
     [:div
-     [:h1.title "Create an article"]
+     [:h1.title title]
      [:hr]
      [:div.columns
       [:div.column.is-half

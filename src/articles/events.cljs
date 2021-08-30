@@ -28,6 +28,6 @@
 
 
 (re-frame/reg-event-db
- ::api-fail
+ :api-fail
  (fn [db [_ result]]
    (assoc db :failure-http-result result)))

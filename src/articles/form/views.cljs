@@ -25,7 +25,8 @@
                             [:div.select
                              [:select {:value @value :on-change update-form}
                               [:option {:value ""} "Please select"]
-                              (map (fn [o] [:option {:key o :value o} o]) options)]])))
+                              (map (fn [o]
+                                     [:option {:key o :value o} o]) options)]])))
 
 
 (defn text-area [id label]

@@ -10,7 +10,7 @@
 
 (def routes
   (atom
-   ["/" {""      :home
+   ["/" {""      :articles-index
          "about" :about
          "articles" {"" :articles-index
                      "/create" :create-article

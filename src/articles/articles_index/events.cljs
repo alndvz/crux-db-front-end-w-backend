@@ -3,6 +3,7 @@
             [ajax.core :as ajax]))
 
 
+
 (re-frame/reg-event-fx
  ::load-articles
  (fn [_ _]
@@ -11,7 +12,7 @@
                  :timeout         8000
                  :response-format (ajax/json-response-format {:keywords? true})
                  :on-success      [::store-articles]
-                 :on-failure      [:bad-http-result]}}))
+                 :on-failure      [:api-fail]}})) 1
 
 (re-frame/reg-event-db
  ::store-articles
