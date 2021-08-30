@@ -21,8 +21,8 @@
  :builds
  {:app
   {:target     :browser
-   :output-dir "resources/public/js/compiled"
-   :asset-path "/js/compiled"
+   :output-dir "resources/public/assets/js/compiled"
+   :asset-path "assets/js/compiled"
    :modules
    {:app {:init-fn articles.core/init}}
    :devtools
