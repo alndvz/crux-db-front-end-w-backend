@@ -1,0 +1,1 @@
+{"version":3,"sources":["articles/articles_edit/events.cljs"],"mappings":"","names":[],"sourcesContent":["(ns articles.articles-edit.events\n  (:require [re-frame.core :as re-frame]))\n\n\n"]}
