@@ -1,0 +1,6 @@
+{:paths ["resources" "src/clj"]
+ :deps {aleph {:mvn/version "0.4.6"}
+        metosin/reitit {:mvn/version "0.5.15"}
+        metosin/muuntaja {:mvn/version "0.6.8"}
+        mount/mount {:mvn/version "0.1.16"}
+        pro.juxt.crux/crux-core {:mvn/version "1.18.1"}}}
