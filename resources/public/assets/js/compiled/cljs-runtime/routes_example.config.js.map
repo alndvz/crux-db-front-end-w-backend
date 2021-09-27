@@ -1,1 +1,0 @@
-{"version":3,"sources":["routes_example/config.cljs"],"mappings":";AAEA,AAAKA,qCACMC","names":["routes-example.config/debug?","js/goog.DEBUG"],"sourcesContent":["(ns routes-example.config)\n\n(def debug?\n  ^boolean goog.DEBUG)\n"]}
