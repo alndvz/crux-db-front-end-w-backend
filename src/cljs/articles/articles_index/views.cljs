@@ -5,7 +5,7 @@
             [articles.articles-index.subs :as subs]))
 
 
-(defn article-card [{:keys [id title author image-url excerpt date-created]}]
+(defn article-card [{:keys [article/id article/title article/author article/image-url article/excerpt article/date-created]}]
   [:div.column.is-one-third {:key id}
    [:div.card.article-card
     [:div.card-image
@@ -34,7 +34,7 @@
     [:div
      [:h1.title "articles"]
      (map-indexed (fn [i articles]
-                    [:div.columns.is-desktop {:key (str "randome" i)}
+                    [:div.columns.is-desktop {:key (str "article" i)}
                      (map (fn [article] (when article (article-card  article))) articles)])
                   partitioned-articles)]))
 

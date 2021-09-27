@@ -6,6 +6,6 @@
  ::select-article
  (fn [db [_ article-id]]
    (->> (:articles db)
-        (filter #(= (:id %) article-id))
+        (filter #(= (:article/id %) article-id))
         first)))
 

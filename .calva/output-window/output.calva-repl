@@ -4,8 +4,7 @@
 ; Please see https://calva.io/output/ for more info.
 ; Happy coding! ♥️
 
-; Jacking in...
-; Starting Jack-in Terminal: npx shadow-cljs -d cider/cider-nrepl:0.26.0 watch :app
+; Connecting ...
 ; Hooking up nREPL sessions...
 ; Connected session: clj
 ; TIPS: 
@@ -19,4 +18,54 @@ clj꞉shadow.user꞉> 
 ; Creating cljs repl session...
 ; Connecting cljs repl: shadow-cljs...
 ;   The Calva Connection Log might have more connection progress information.
+; Connected session: cljs, repl: :app
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉cljs.user꞉>  ; Use `alt+enter` to evaluate
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉cljs.user꞉> 
+2
+cljs꞉articles.core꞉> 
+nil
+; ------ WARNING - :undeclared-var -----------------------------------------------
+;  Resource: <eval>:1:55
+Use of undeclared Var articles.articles-view.views/route-params
+--------------------------------------------------------------------------------
+
+cljs꞉articles.articles-view.views꞉> 
+nil
+cljs꞉articles.articles-view.views꞉> 
+#object[re_frame$subs$subs_handler_fn]
+cljs꞉articles.form.subs꞉> 
+nil
+; ------ WARNING - :undeclared-var -----------------------------------------------
+;  Resource: <eval>:1:35
+Use of undeclared Var articles.form.views/id
+--------------------------------------------------------------------------------
+
+cljs꞉articles.form.views꞉> 
+""
+cljs꞉articles.form.views꞉> 
+""
+cljs꞉articles.form.views꞉> 
+""
+cljs꞉articles.form.views꞉> 
+[:articles.form.subs/form :article/author]
+cljs꞉articles.form.views꞉> 
+""
+cljs꞉articles.form.views꞉> 
+("on the code again")
+cljs꞉articles.form.views꞉> 
+()
+cljs꞉articles.form.views꞉> 
+false
+cljs꞉articles.form.views꞉> 
+false
+cljs꞉articles.form.views꞉> 
 ; nREPL Connection was closed

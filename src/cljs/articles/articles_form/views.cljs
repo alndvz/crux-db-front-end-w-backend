@@ -31,19 +31,19 @@
 
 (defn article-form []
   (let [edit-id @(re-frame/subscribe [::subs/edit-id])
-        form-valid? @(re-frame/subscribe [::form-subs/form-is-valid? [:title :excerpt :image-url :body :author :tags]])
+        form-valid? @(re-frame/subscribe [::form-subs/form-is-valid? [:article/title :article/excerpt :article/image-url :article/body :article/author :article/tags]])
         title (if edit-id "Update Article" "Create Article")]
     [:div
      [:h1.title title]
      [:hr]
      [:div.columns
       [:div.column.is-half
-       (text-input :title "Title")
-       (text-input :excerpt "Excerpt")
-       (text-input :image-url "Image url")
+       (text-input :article/title "Title")
+       (text-input :article/excerpt "Excerpt")
+       (text-input :article/image-url "Image url")
        (image-display)
-       (text-area :body "Body")
-       (select-input :author "Author" ["On the code again" "Allan" "Jeremy Mags"])
+       (text-area :article/body "Body")
+       (select-input :article/author "Author" ["On the code again" "Allan" "Jeremy Mags"])
        (add-tag-input)
        (tag-list)
        [:button.button.is-primary.mt-4 {:disabled (not form-valid?)

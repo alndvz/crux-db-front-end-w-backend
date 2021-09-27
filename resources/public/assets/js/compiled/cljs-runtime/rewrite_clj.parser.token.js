@@ -9,8 +9,8 @@ rewrite_clj.parser.token.allowed_suffix_QMARK_ = (function rewrite_clj$parser$to
 return (((c === "'")) || ((c === ":")));
 });
 rewrite_clj.parser.token.read_to_boundary = (function rewrite_clj$parser$token$read_to_boundary(reader,allowed_QMARK_){
-return rewrite_clj.reader.read_until(reader,(function (p1__41569_SHARP_){
-return ((cljs.core.not((allowed_QMARK_.cljs$core$IFn$_invoke$arity$1 ? allowed_QMARK_.cljs$core$IFn$_invoke$arity$1(p1__41569_SHARP_) : allowed_QMARK_.call(null,p1__41569_SHARP_)))) && (rewrite_clj.reader.whitespace_or_boundary_QMARK_(p1__41569_SHARP_)));
+return rewrite_clj.reader.read_until(reader,(function (p1__38060_SHARP_){
+return ((cljs.core.not((allowed_QMARK_.cljs$core$IFn$_invoke$arity$1 ? allowed_QMARK_.cljs$core$IFn$_invoke$arity$1(p1__38060_SHARP_) : allowed_QMARK_.call(null,p1__38060_SHARP_)))) && (rewrite_clj.reader.whitespace_or_boundary_QMARK_(p1__38060_SHARP_)));
 }));
 });
 rewrite_clj.parser.token.read_to_char_boundary = (function rewrite_clj$parser$token$read_to_char_boundary(reader){
@@ -27,9 +27,9 @@ if(cljs.core.empty_QMARK_(suffix)){
 return (rewrite_clj.node.token_node.cljs$core$IFn$_invoke$arity$2 ? rewrite_clj.node.token_node.cljs$core$IFn$_invoke$arity$2(value,value_string) : rewrite_clj.node.token_node.call(null,value,value_string));
 } else {
 var s = rewrite_clj.parser.token.join_2(value_string,suffix);
-var G__41577 = (rewrite_clj.reader.read_string.cljs$core$IFn$_invoke$arity$1 ? rewrite_clj.reader.read_string.cljs$core$IFn$_invoke$arity$1(s) : rewrite_clj.reader.read_string.call(null,s));
-var G__41578 = s;
-return (rewrite_clj.node.token_node.cljs$core$IFn$_invoke$arity$2 ? rewrite_clj.node.token_node.cljs$core$IFn$_invoke$arity$2(G__41577,G__41578) : rewrite_clj.node.token_node.call(null,G__41577,G__41578));
+var G__38066 = (rewrite_clj.reader.read_string.cljs$core$IFn$_invoke$arity$1 ? rewrite_clj.reader.read_string.cljs$core$IFn$_invoke$arity$1(s) : rewrite_clj.reader.read_string.call(null,s));
+var G__38067 = s;
+return (rewrite_clj.node.token_node.cljs$core$IFn$_invoke$arity$2 ? rewrite_clj.node.token_node.cljs$core$IFn$_invoke$arity$2(G__38066,G__38067) : rewrite_clj.node.token_node.call(null,G__38066,G__38067));
 }
 });
 /**

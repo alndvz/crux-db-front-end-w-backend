@@ -7,7 +7,7 @@
 (re-frame/reg-event-db
  ::initialise-edit
  (fn [db [_ article-id]]
-   (let [article (first (filter #(= (int article-id) (:id %)) (get db :articles [])))]
+   (let [article (first (filter #(= (int article-id) (:article/id %)) (get db :articles [])))]
      (-> db
          (assoc :editing-id (int article-id))
          (assoc :form article)))))
@@ -34,22 +34,22 @@
  ::save-article-tag
  (fn [db _]
    (let [new-tag (get-in db [:form :tag] nil)
-         current-tags (get-in db [:form :tags] #{})]
+         current-tags (get-in db [:form :article/tags] #{})]
      (cond-> db
-       new-tag (assoc-in [:form :tags] (conj current-tags new-tag))
+       new-tag (assoc-in [:form :article/tags] (conj current-tags new-tag))
        :default (dissoc [:form :tag] "")))))
 
 (re-frame/reg-event-db
  ::remove-article-tag
  (fn [db [_ tag]]
-   (let [current-tags (get-in db [:form :tags] #{})]
-     (assoc-in db [:form :tags] (disj current-tags tag)))))
+   (let [current-tags (get-in db [:form :article/tags] #{})]
+     (assoc-in db [:form :article/tags] (disj current-tags tag)))))
 
 (re-frame/reg-event-fx
  ::save-article
  (fn [{:keys [db]} [_ editing-id]]
    (let [form-data (:form db)
-         article (if editing-id (assoc  form-data :date-created (get-date)) form-data)
+         article (if editing-id (assoc  form-data :aticle/date-created (get-date)) form-data)
          uri (if editing-id "/articles/update" "/articles/create")]
      {:http-xhrio {:method          :POST
                    :uri             uri

@@ -23,8 +23,8 @@ throw (new Error("Assert failed: (seq? zloc)"));
 var temp__5751__auto__ = rewrite_clj.zip.move.down(zloc);
 if(cljs.core.truth_(temp__5751__auto__)){
 var n0 = temp__5751__auto__;
-var G__41958 = (f.cljs$core$IFn$_invoke$arity$1 ? f.cljs$core$IFn$_invoke$arity$1(n0) : f.call(null,n0));
-var G__41958__$1 = (((G__41958 == null))?null:cljs.core.iterate((function (loc){
+var G__38462 = (f.cljs$core$IFn$_invoke$arity$1 ? f.cljs$core$IFn$_invoke$arity$1(n0) : f.call(null,n0));
+var G__38462__$1 = (((G__38462 == null))?null:cljs.core.iterate((function (loc){
 var temp__5751__auto____$1 = rewrite_clj.zip.move.right(loc);
 if(cljs.core.truth_(temp__5751__auto____$1)){
 var n = temp__5751__auto____$1;
@@ -32,13 +32,13 @@ return (f.cljs$core$IFn$_invoke$arity$1 ? f.cljs$core$IFn$_invoke$arity$1(n) : f
 } else {
 return null;
 }
-}),G__41958));
-var G__41958__$2 = (((G__41958__$1 == null))?null:cljs.core.take_while.cljs$core$IFn$_invoke$arity$2(cljs.core.identity,G__41958__$1));
-var G__41958__$3 = (((G__41958__$2 == null))?null:cljs.core.last(G__41958__$2));
-if((G__41958__$3 == null)){
+}),G__38462));
+var G__38462__$2 = (((G__38462__$1 == null))?null:cljs.core.take_while.cljs$core$IFn$_invoke$arity$2(cljs.core.identity,G__38462__$1));
+var G__38462__$3 = (((G__38462__$2 == null))?null:cljs.core.last(G__38462__$2));
+if((G__38462__$3 == null)){
 return null;
 } else {
-return rewrite_clj.zip.move.up(G__41958__$3);
+return rewrite_clj.zip.move.up(G__38462__$3);
 }
 } else {
 return zloc;
@@ -71,16 +71,16 @@ var v0 = temp__5751__auto__;
 var temp__5751__auto____$1 = (f.cljs$core$IFn$_invoke$arity$1 ? f.cljs$core$IFn$_invoke$arity$1(v0) : f.call(null,v0));
 if(cljs.core.truth_(temp__5751__auto____$1)){
 var v = temp__5751__auto____$1;
-var G__41992 = rewrite_clj.zip.move.right(v);
-var G__41993 = rewrite_clj.zip.move.up(v);
-loc = G__41992;
-parent = G__41993;
+var G__38497 = rewrite_clj.zip.move.right(v);
+var G__38498 = rewrite_clj.zip.move.up(v);
+loc = G__38497;
+parent = G__38498;
 continue;
 } else {
-var G__41994 = rewrite_clj.zip.move.right(v0);
-var G__41995 = parent;
-loc = G__41994;
-parent = G__41995;
+var G__38499 = rewrite_clj.zip.move.right(v0);
+var G__38500 = parent;
+loc = G__38499;
+parent = G__38500;
 continue;
 }
 } else {
@@ -114,16 +114,16 @@ return parent;
 var temp__5751__auto__ = (f.cljs$core$IFn$_invoke$arity$1 ? f.cljs$core$IFn$_invoke$arity$1(loc) : f.call(null,loc));
 if(cljs.core.truth_(temp__5751__auto__)){
 var v = temp__5751__auto__;
-var G__41997 = rewrite_clj.zip.move.right(rewrite_clj.zip.move.right(v));
-var G__41998 = rewrite_clj.zip.move.up(v);
-loc = G__41997;
-parent = G__41998;
+var G__38501 = rewrite_clj.zip.move.right(rewrite_clj.zip.move.right(v));
+var G__38502 = rewrite_clj.zip.move.up(v);
+loc = G__38501;
+parent = G__38502;
 continue;
 } else {
-var G__42000 = rewrite_clj.zip.move.right(rewrite_clj.zip.move.right(loc));
-var G__42001 = parent;
-loc = G__42000;
-parent = G__42001;
+var G__38506 = rewrite_clj.zip.move.right(rewrite_clj.zip.move.right(loc));
+var G__38507 = parent;
+loc = G__38506;
+parent = G__38507;
 continue;
 }
 }
@@ -156,21 +156,21 @@ throw (new Error("Assert failed: (or (map? zloc) (and (seq? zloc) (integer? k)))
 }
 
 if(rewrite_clj.zip.seqz.map_QMARK_(zloc)){
-var G__41988 = zloc;
-var G__41988__$1 = (((G__41988 == null))?null:rewrite_clj.zip.move.down(G__41988));
-var G__41988__$2 = (((G__41988__$1 == null))?null:rewrite_clj.zip.findz.find_value.cljs$core$IFn$_invoke$arity$2(G__41988__$1,k));
-if((G__41988__$2 == null)){
+var G__38477 = zloc;
+var G__38477__$1 = (((G__38477 == null))?null:rewrite_clj.zip.move.down(G__38477));
+var G__38477__$2 = (((G__38477__$1 == null))?null:rewrite_clj.zip.findz.find_value.cljs$core$IFn$_invoke$arity$2(G__38477__$1,k));
+if((G__38477__$2 == null)){
 return null;
 } else {
-return rewrite_clj.zip.move.right(G__41988__$2);
+return rewrite_clj.zip.move.right(G__38477__$2);
 }
 } else {
-return cljs.core.nth.cljs$core$IFn$_invoke$arity$2((function (){var G__41989 = rewrite_clj.zip.move.down(zloc);
-var G__41989__$1 = (((G__41989 == null))?null:cljs.core.iterate(rewrite_clj.zip.move.right,G__41989));
-if((G__41989__$1 == null)){
+return cljs.core.nth.cljs$core$IFn$_invoke$arity$2((function (){var G__38478 = rewrite_clj.zip.move.down(zloc);
+var G__38478__$1 = (((G__38478 == null))?null:cljs.core.iterate(rewrite_clj.zip.move.right,G__38478));
+if((G__38478__$1 == null)){
 return null;
 } else {
-return cljs.core.take_while.cljs$core$IFn$_invoke$arity$2(cljs.core.identity,G__41989__$1);
+return cljs.core.take_while.cljs$core$IFn$_invoke$arity$2(cljs.core.identity,G__38478__$1);
 }
 })(),k);
 }

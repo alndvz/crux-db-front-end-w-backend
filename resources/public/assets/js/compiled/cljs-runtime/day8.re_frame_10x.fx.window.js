@@ -1,9 +1,9 @@
 goog.provide('day8.re_frame_10x.fx.window');
 day8.re_frame_10x.fx.window.m__GT_str = (function day8$re_frame_10x$fx$window$m__GT_str(m){
-return clojure.string.join.cljs$core$IFn$_invoke$arity$2(",",cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (ret,p__38977){
-var vec__38978 = p__38977;
-var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__38978,(0),null);
-var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__38978,(1),null);
+return clojure.string.join.cljs$core$IFn$_invoke$arity$2(",",cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (ret,p__35506){
+var vec__35508 = p__35506;
+var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__35508,(0),null);
+var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__35508,(1),null);
 var k__$1 = (((k instanceof cljs.core.Keyword))?cljs.core.name(k):k);
 var v__$1 = (((v instanceof cljs.core.Keyword))?cljs.core.name(v):v);
 return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(ret,[cljs.core.str.cljs$core$IFn$_invoke$arity$1(k__$1),"=",cljs.core.str.cljs$core$IFn$_invoke$arity$1(v__$1)].join(''));
@@ -12,16 +12,16 @@ return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(ret,[cljs.core.str.cljs$core
 /**
  * Originally copied from re-frisk.devtool/open-debugger-window
  */
-day8.re_frame_10x.fx.window.open_debugger_window = (function day8$re_frame_10x$fx$window$open_debugger_window(p__38981){
-var map__38982 = p__38981;
-var map__38982__$1 = cljs.core.__destructure_map(map__38982);
-var width = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38982__$1,new cljs.core.Keyword(null,"width","width",-384071477));
-var height = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38982__$1,new cljs.core.Keyword(null,"height","height",1025178622));
-var top = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38982__$1,new cljs.core.Keyword(null,"top","top",-1856271961));
-var left = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38982__$1,new cljs.core.Keyword(null,"left","left",-399115937));
-var on_load = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38982__$1,new cljs.core.Keyword(null,"on-load","on-load",1415151594));
-var on_success = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38982__$1,new cljs.core.Keyword(null,"on-success","on-success",1786904109));
-var on_failure = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__38982__$1,new cljs.core.Keyword(null,"on-failure","on-failure",842888245));
+day8.re_frame_10x.fx.window.open_debugger_window = (function day8$re_frame_10x$fx$window$open_debugger_window(p__35515){
+var map__35517 = p__35515;
+var map__35517__$1 = cljs.core.__destructure_map(map__35517);
+var width = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__35517__$1,new cljs.core.Keyword(null,"width","width",-384071477));
+var height = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__35517__$1,new cljs.core.Keyword(null,"height","height",1025178622));
+var top = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__35517__$1,new cljs.core.Keyword(null,"top","top",-1856271961));
+var left = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__35517__$1,new cljs.core.Keyword(null,"left","left",-399115937));
+var on_load = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__35517__$1,new cljs.core.Keyword(null,"on-load","on-load",1415151594));
+var on_success = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__35517__$1,new cljs.core.Keyword(null,"on-success","on-success",1786904109));
+var on_failure = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__35517__$1,new cljs.core.Keyword(null,"on-failure","on-failure",842888245));
 var document_title = document.title;
 var window_title = goog.string.escapeString(["re-frame-10x | ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(document_title)].join(''));
 var window_html = ["<head><title>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(window_title),"</title></head><body style=\"margin: 0px;\"></body>"].join('');
