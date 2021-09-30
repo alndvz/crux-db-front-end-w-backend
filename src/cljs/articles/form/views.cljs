@@ -24,7 +24,7 @@
   (field-control id label (fn [value update-form]
                             [:div.select
                              [:select {:value @value :on-change update-form}
-                              [:option {:value ""} "Please select"]
+                              (when (empty? (filter #(= % @value) options)) [:option {:value ""} "Please select"])
                               (map (fn [o]
                                      [:option {:key o :value o} o]) options)]])))
 
@@ -34,3 +34,6 @@
                             [:textarea.textarea {:value @value
                                                  :on-change update-form
                                                  :type "text" :placeholder ""}])))
+
+
+(empty? (filter #(= % "on the code again") ["on the code again"]))

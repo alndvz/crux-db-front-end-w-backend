@@ -1,1 +1,0 @@
-{"version":3,"sources":["routes_example/users_index/subs.cljs"],"mappings":";AAIA,2DAAA,3DAACA,iOAEA,WAAKC,GAAGC;AAAR,AACE,OAAA,qFAAQD","names":["re_frame.core.reg_sub","db","_"],"sourcesContent":["(ns routes-example.users-index.subs\n  (:require [re-frame.core :as re-frame]))\n\n\n(re-frame/reg-sub\n ::users\n (fn [db _]\n   (:users db)))"]}

@@ -6,7 +6,7 @@
 (re-frame/reg-sub
  ::tag-list
  (fn [db _]
-   (get-in db [:form :tags] #{})))
+   (get-in db [:form :article/tags] #{})))
 
 
 (re-frame/reg-sub
