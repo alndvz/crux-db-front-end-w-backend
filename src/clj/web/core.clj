@@ -16,10 +16,8 @@
                      :where [[?e :article/id _]]})})
 
 (defn create-handler [{:keys [body-params]}]
-  (let [tx (db/write body-params)]
-    (clojure.pprint/pprint tx)
-    (db/write body-params)
-    {:body body-params}))
+  (db/write body-params)
+  {:body body-params})
 
 (def app
   (ring/ring-handler

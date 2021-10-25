@@ -55,8 +55,8 @@
                    :uri             uri
                    :timeout         8000
                    :params          article
-                   :format          (ajax/json-request-format)
-                   :response-format (ajax/json-response-format {:keywords? true})  ;; IMPORTANT!: You must provide this.
+                   :format          (ajax/transit-request-format)
+                   :response-format (ajax/transit-response-format {:keywords? true})  ;; IMPORTANT!: You must provide this.
                    :on-success      [::saved-article]
                    :on-failure      [:api-fail]}})))
 
